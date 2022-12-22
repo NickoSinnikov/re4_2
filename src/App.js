@@ -8,7 +8,9 @@ function App() {
   const [distanceList, setDistanceList] = useState([]);
 
   const onAddList = (date, distance) => {
+   
     const isExist = distanceList.find((el, i, arr) => {
+  
       if (el.date === date) {
         arr[i].distance = Number(arr[i].distance) + Number(distance);
         return true;
@@ -24,15 +26,21 @@ function App() {
         {
           date: date,
           distance: distance,
+          dateFormat: new Date(date),
         },
       ]);
     }
   };
+  const deleteDistanceItem = (date)=>{
+    setDistanceList(prevDistanceList => prevDistanceList.filter(distanceList => distanceList.date !== date ))
+    console.log(date + " delete")
+  }
 
   return (
     <div className="container">
       <DistanceForm onAddList ={onAddList} />
-      <DistanceList distanceList={distanceList} />
+      { distanceList.length > 0 ? (<DistanceList distanceList={distanceList} deleteDistanceItem={deleteDistanceItem} />):
+      (<div className="empty-list"> Нет данных</div>)}
     </div>
   );
 }

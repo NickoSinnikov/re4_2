@@ -1,14 +1,19 @@
 body, *{
+  font-family: -apple-system, BlinkMacSystemFont, "Bradley Hand", cursive;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+button{
+  cursor: pointer;
 }
 
 li{
   list-style: none;
 }
 
-.container, .input-forms, .form, .distance-list{
+body, .container, .input-forms, .form, .list-item, .list-header{
   display: flex;
 }
 
@@ -17,13 +22,13 @@ li{
   margin-right: 10px; 
 }
 
-.input-forms, .container{
+body, .input-forms, .container{
   align-items: center;
   justify-content: center;
 }
 
 .container{
-  width: 75vw;
+  width: 45vw;
   flex-direction: column;
 
   padding: 7px;
@@ -32,7 +37,7 @@ li{
 }
 
 .input-forms{
-  width: 45vw;
+  width: 100%;
   justify-content: space-around;
   
   align-items: flex-end;
@@ -42,9 +47,8 @@ li{
 .form input {
   width: 200px;
   height: 30px;
-  
+  border: 1px solid grey;
   border-radius: 7px;
-
   margin-top:5px;
 }
 
@@ -52,20 +56,70 @@ li{
   width: 80px;
   height: 30px;
 
-  border: 2px solid grey;
+  border: 1px solid grey;
   border-radius: 7px;
   background-color: white;
 }
 
+.list{
+  width: 100%;
+  
+ 
 
-.distance-list{
-  width: 50vw;
-
-  justify-content: space-around;
+  padding: 10px;
 }
 
 .list-header{
-  display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+
+  width: 100%;
+  margin-bottom: 10px;
 }
 
+.list-header li{
+  text-align: center;
+  width: 32%;
+}
+
+.list-item{
+  width: 100%;
+  padding: 8px;
+  text-align: center;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+  
+}
+
+.list-item:last-child{
+  border: none;
+}
+
+.list-item span{
+  width: 32%;
+  text-align: center;
+  
+}
+.list-actions{
+  display: inline-block;
+  width: 32%;
+}
+
+.list-actions .edit{
+  margin-right: 10px;
+}
+
+.list-actions button{
+  border:none;
+  background-color: inherit;
+}
+
+.empty-list{
+  margin-top: 10px;
+  width: 100%;
+  opacity: .5;
+  text-align: center;
+}
+
+.button:hover{
+  background-color: rgb(235, 232, 232);
+}

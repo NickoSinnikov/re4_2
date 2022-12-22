@@ -10,7 +10,7 @@ export default function DistanceForm(props) {
   }
   
   return (
-    <div>
+    
       <form className="input-forms" onSubmit={onSubmitHandler}>
         <div className="form-date form">
           <label>Дата (ДД.ММ.ГГ)</label>
@@ -24,6 +24,6 @@ export default function DistanceForm(props) {
           Ok
         </button>
       </form>
-    </div>
+    
   );
 }
